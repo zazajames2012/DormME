@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>บันทึกเลขมิเตอร์ไฟฟ้า</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <link href="~/Content/startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/startbootstrap/dist/css/sb-admin-2.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/myCSS/SaveMeter.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="body"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-5">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><center><b>บันทึกเลขมิเตอร์</b></center></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="" enctype="multipart/form-data">
+                            <fieldset>
+                                <label>หอพัก</label>
+                                <div class="form-group">                                    
+                                    <select class="form-control" id="dorm" name="dorm" >
+                                        <option value="M001">
+                                            หอชาย(พรพิรุณ)
+                                        </option>
+                                        <option value="L001">
+                                            หอหญิง(ขวัญพิรุณ)
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>เลขห้อง</label>
+                                    <input type="number" class="form-control" placeholder="เช่น 201,219,301,319"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>เลขมิเตอร์ครั้งที่แล้ว</label>
+                                    <input type="number" class="form-control" disabled name="meterLast" value="" >
+                                    <input type="hidden" name="HmeterLast" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label>เลขมิเตอร์ปัจจุบัน</label>
+                                    <input class="form-control" placeholder="99999" id="meter" name="meter" type="number"  />
+                                </div>
+                                <div class="form-group">
+                                    <center>
+                                        <input class="form-control file-up" name="img" id="img" type="file" accept="image/*" capture="camera" style="display:none;" />
+                                        <button type="button" class="btn btn-warning btn-lg btn-sm btn-upload" ><i class="fa fa-camera"></i> ถ่ายรูปมิเตอร์</button>
+                                        <div class="btn btn-sm btn-danger mg-top btn-lg btn-remove-file" style="display:none;">X</div>
+                                    </center>
+                                </div>
+                                <input name="submit" type="submit" class="btn btn-success btn-lg btn-block" value="บันทึกเลขมิเตอร์" /></a>
+                                <br />
+                                <a href="@Url.Action("index","home")">กลับสู่เมนูหลัก</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/startbootstrap/dist/js/sb-admin-2.min.js"></script>
+    <script src="~/Content/startbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
